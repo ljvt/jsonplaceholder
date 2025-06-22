@@ -43,7 +43,7 @@ fun AppNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "main_screen") {
         composable("main_screen") { MainScreen(navController = navController) }
-        composable("todos_list") { TodoListScreen() }
-        composable("posts_list") { PostListScreen() }
+        composable("todos_list") { TodoListScreen(onBack = {navController.popBackStack()}) }
+        composable("posts_list") { PostListScreen(onBack = {navController.popBackStack()}) }
     }
 }
